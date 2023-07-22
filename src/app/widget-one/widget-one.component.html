@@ -1,0 +1,11 @@
+<!--<mat-slider discrete min="0" max="100" step="1">-->
+<!--  <input matSliderThumb>-->
+<!--</mat-slider>-->
+
+<div class="range">
+  <div class="range-outer">
+    <div [ngClass]="isClicked ? 'range-inner clicked' : 'range-inner'" (click)="switchPower()">
+      <mat-icon>power_settings_new</mat-icon>
+    </div>
+  </div>
+</div>

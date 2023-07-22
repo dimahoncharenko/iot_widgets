@@ -1,0 +1,57 @@
+.range {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.range-outer {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: .3em .3em .5em -.03em hsl(180, 100%, 17%), -.3em -.3em .6em -.01em hsl(180, 100%, 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.range-inner {
+  cursor: pointer;
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: hsl(180, 100%, 17%);
+  transition: all .3s ease-in-out;
+  box-shadow:
+    .2em .2em .3em -.01em hsl(180, 100%, 17%),
+    inset -.1em -.1em .2em -.01em hsl(180, 100%, 17%),
+    -.005em -0.005em 0 hsl(180, 100%, 27%);
+}
+
+.range-inner.clicked {
+  color: hsl(180, 70%, 60%);
+  box-shadow:
+    inset .2em .2em .3em -.01em hsl(180, 100%, 17%),
+    inset -.1em -.1em .2em -.01em hsl(180, 100%, 17%),
+    0 .9em .6em -.6em hsl(180, 100%, 25%);
+}
+
+circle {
+  --full-circle: 260;
+  --progress-percentage: .1;
+  --progress: calc(var(--full-circle) - var(--full-circle) * var(--progress-percentage));
+
+  fill: none;
+  stroke: url(#gradient-color);
+  stroke-width: 17px;
+  stroke-dasharray: var(--full-circle);
+  stroke-dashoffset: var(--progress);
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

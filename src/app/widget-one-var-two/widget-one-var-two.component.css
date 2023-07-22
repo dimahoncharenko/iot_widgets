@@ -1,0 +1,51 @@
+.range {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  color: hsl(277, 0%, 60%);
+}
+
+.range.clicked {
+  color: hsl(277, 50%, 60%);
+  transform: translateY(.03em);
+}
+
+.range-outer,
+.range-middle,
+.range-inner {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.range-outer {
+  width: 100%;
+  height: 100%;
+  background: rgb(244,149,255);
+  background: linear-gradient(180deg, hsl(294, 100%, 79%) 0%, rgb(70, 9, 156) 100%);
+  box-shadow: 0 .02em .1em hsl(294, 100%, 10%);
+}
+
+.range.clicked .range-outer {
+ box-shadow: inset 0 0 .1em hsl(294, 100%, 10%);
+}
+
+.range-middle {
+  width: 90%;
+  height: 90%;
+  background-color: hsl(180, 30%, 95%);
+  box-shadow:
+    inset -.02em -.1em 0 0 hsl(180, 10%, 80%),
+    inset .02em .15em 0 0 hsl(180, 60%, 95%),
+    .015em .15em .1em hsla(180, 30%, 10%, .4);
+}
+
+.range-inner {
+  width: 50%;
+  height: 50%;
+  background-color: #f5fdfb;
+  cursor: pointer;
+  box-shadow:
+    inset 0 .8em 1em hsla(270, 15%, 50%, .15);
+}

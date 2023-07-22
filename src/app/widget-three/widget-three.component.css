@@ -1,0 +1,174 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.widget-configurator > p {
+  font-size: clamp(1rem, 2vw + .4em, 1.5rem);
+  padding: .2em .2em 0 .2em;
+  margin-bottom: .2em;
+}
+
+.widget-container {
+  display: flex;
+  flex-direction: column;
+  max-width: max-content;
+  box-shadow: 0 0 .15em slategray;
+  margin: .2em;
+  border-radius: .5em;
+}
+
+.widget-top,
+.widget-bottom {
+  display: flex;
+  justify-content: space-between;
+  height: min-content;
+  padding: 1em .5em;
+}
+
+.widget-top p,
+.widget-bottom p {
+  margin: 0;
+}
+
+.widget-middle {
+  --color-1: #052b2f;
+  --color-2: #073438;
+  --color-3: #f2f75d;
+  --color-4: #f4e545;
+  --color-5: #ffbb18;
+  padding: 0 2.5em;
+}
+
+.icon {
+  max-width: 4em;
+}
+
+.prop-container {
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+  align-items: center;
+  justify-content: center;
+}
+
+.prop-container.horizontal {
+  flex-direction: initial;
+  justify-content: space-between;
+}
+
+.prop-value {
+  font-weight: bold;
+}
+
+.hub {
+  padding: .1em;
+  max-width: 10em;
+}
+
+.left-arrows,
+.right-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+}
+
+.left-arrow {
+  position: relative;
+  width: 10em;
+  height: 5em;
+  border-radius: .1em;
+  overflow: hidden;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--color-5) 0deg 40deg,
+    var(--color-3) 40deg 100deg,
+    var(--color-5) 100deg 140deg,
+    var(--color-3) 140deg 220deg,
+    var(--color-5) 220deg 260deg,
+    var(--color-3) 260deg 320deg
+  );
+  animation: rotation-to-the-left 10s linear infinite;
+}
+
+.right-arrow {
+  position: relative;
+  width: 10em;
+  height: 5em;
+  border-radius: .1em;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--color-5) 0deg 40deg,
+    var(--color-3) 40deg 80deg,
+    var(--color-4) 80deg 180deg,
+    var(--color-5) 180deg 240deg,
+    var(--color-3) 240deg 280deg,
+    var(--color-4) 280deg 340deg
+  );
+  animation: rotation-to-the-right 10s linear infinite;
+}
+
+.right-arrow::before,
+.right-arrow::after,
+.left-arrow::before,
+.left-arrow::after {
+  content: " ";
+  position: absolute;
+  inset: .1rem;
+  left: -.1em;
+  border-radius: inherit;
+  background: #FFF;
+}
+
+.left-arrow::before,
+.left-arrow::after {
+  inset: .1rem;
+  right: -.1em;
+}
+
+.left-arrow.top::before,
+.left-arrow.top::after,
+.right-arrow.top::before,
+.right-arrow.top::after {
+  top: -.1em;
+}
+
+.left-arrow.bottom::before,
+.left-arrow.bottom::after,
+.right-arrow.bottom::before,
+.right-arrow.bottom::after {
+  bottom: -.1em;
+}
+
+.right-arrow.bottom {
+  animation: rotation-to-the-left 10s linear infinite;
+}
+
+.left-arrow.bottom {
+  animation: rotation-to-the-right 10s linear infinite;
+}
+
+@keyframes rotation-to-the-right {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
+
+@keyframes rotation-to-the-left {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: -360deg; }
+}
+
+
+
+
+
