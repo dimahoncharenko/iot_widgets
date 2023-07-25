@@ -1,0 +1,13 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.cols {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 0 .1em slategray;
+  border-radius: .5em;
+}

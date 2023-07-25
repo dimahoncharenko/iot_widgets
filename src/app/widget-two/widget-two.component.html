@@ -1,11 +1,11 @@
-<!--<div class="slider" (click)="handleClick($event)" (mousemove)="handleMousemove($event)">-->
-<!--  <div class="knob"></div>-->
-<!--</div>-->
-
-
-<div class="knob-container" (mousedown)="handleMouseDown($event)">
-  <div class="knob" [style.transform]="'rotate(' + angle + 'deg)'" (mousemove)="handleMousemove($event)">
+<div class="wrapper">
+  <div class="knob-container" style="--glow-color: {{current_glow_color}};" (mousedown)="handleMouseDown($event)">
+    <div class="knob" [style.transform]="'rotate(' + angle + 'deg)'" (mousemove)="handleMousemove($event)">
+    </div>
+    <span class="temperature">{{ temperature }}</span>
   </div>
-  <span class="temperature">{{ temperature }}</span>
+  <div class="color-palette">
+    <span *ngFor="let c of glow_colors;" (click)="handleChangeGlowColor(c)" style="background-color: {{ c }};"></span>
+  </div>
 </div>
 

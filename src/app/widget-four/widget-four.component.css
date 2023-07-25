@@ -1,0 +1,7 @@
+.chart-wrapper {
+  box-shadow: 0 0 .1em slategray;
+  border-radius: .5em;
+  width: 100%;
+  min-height: 300px;
+  aspect-ratio: 2/1;
+}

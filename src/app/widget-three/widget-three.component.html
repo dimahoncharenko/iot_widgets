@@ -1,20 +1,16 @@
-<div class="wrapper">
-  <div class="widget-container">
+<div class="widget-container">
     <div class="widget-top">
       <div class="prop-container">
         <div class="icon "><img src="assets/solar-panel.png" alt="Production"/></div>
         <p>Production</p>
         <p class="prop-value">1.58kW</p>
       </div>
-      <div class="prop-container" *ngIf="grid">
-        <div class="icon"><img src="assets/electric-tower.png" alt="Electric power"/></div>
+      <div class="prop-container">
+        <div *ngIf="grid" class="icon"><img src="assets/electric-tower.png" alt="Electric power"/></div>
+        <div *ngIf="!grid" class="icon"><img src="assets/close.png" alt="Electric power"/></div>
         <p>Grid</p>
-        <p class="prop-value">33.00W</p>
-      </div>
-      <div class="prop-container" *ngIf="!grid">
-        <div style="max-width: 3em;"><img src="assets/cancel.png" alt="Electric power"/></div>
-        <p>Grid</p>
-        <p class="prop-value" style="font-size: 1.2rem;">[Error]</p>
+        <p class="prop-value">{{ voltageValue }}</p>
+        <mat-slide-toggle [checked]="grid" (change)="switchGrid()"></mat-slide-toggle>
       </div>
     </div>
     <div class="widget-middle">
@@ -43,8 +39,4 @@
       </div>
     </div>
    </div>
-   <div class="widget-configurator">
-       <p>Power Grid</p>
-       <mat-slide-toggle [checked]="grid" (change)="switchGrid()">Slide me!</mat-slide-toggle>
-   </div>
-</div>
+

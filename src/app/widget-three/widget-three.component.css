@@ -9,22 +9,12 @@ img {
   height: 100%;
 }
 
-.wrapper {
-  display: flex;
-}
-
-.widget-configurator > p {
-  font-size: clamp(1rem, 2vw + .4em, 1.5rem);
-  padding: .2em .2em 0 .2em;
-  margin-bottom: .2em;
-}
-
 .widget-container {
   display: flex;
   flex-direction: column;
-  max-width: max-content;
-  box-shadow: 0 0 .15em slategray;
-  margin: .2em;
+  width: 100%;
+  margin: 1em auto;
+  box-shadow: 0 0 .1em slategray;
   border-radius: .5em;
 }
 
@@ -32,8 +22,7 @@ img {
 .widget-bottom {
   display: flex;
   justify-content: space-between;
-  height: min-content;
-  padding: 1em .5em;
+  padding: 1em 0.5em;
 }
 
 .widget-top p,
@@ -47,6 +36,8 @@ img {
   --color-3: #f2f75d;
   --color-4: #f4e545;
   --color-5: #ffbb18;
+  --borders-radius: .5em;
+
   padding: 0 2.5em;
 }
 
@@ -57,14 +48,17 @@ img {
 .prop-container {
   display: flex;
   flex-direction: column;
-  gap: .3em;
   align-items: center;
-  justify-content: center;
 }
 
 .prop-container.horizontal {
   flex-direction: initial;
-  justify-content: space-between;
+  justify-content: center;
+  gap: .5em;
+}
+
+.prop-container > * {
+  flex: 1;
 }
 
 .prop-value {
@@ -72,8 +66,7 @@ img {
 }
 
 .hub {
-  padding: .1em;
-  max-width: 10em;
+  max-width: 15em;
 }
 
 .left-arrows,
@@ -85,9 +78,7 @@ img {
 
 .left-arrow {
   position: relative;
-  width: 10em;
-  height: 5em;
-  border-radius: .1em;
+  height: 8em;
   overflow: hidden;
   background: conic-gradient(
     from var(--gradient-angle),
@@ -103,9 +94,7 @@ img {
 
 .right-arrow {
   position: relative;
-  width: 10em;
-  height: 5em;
-  border-radius: .1em;
+  height: 8em;
   background: conic-gradient(
     from var(--gradient-angle),
     var(--color-5) 0deg 40deg,
@@ -126,7 +115,6 @@ img {
   position: absolute;
   inset: .1rem;
   left: -.1em;
-  border-radius: inherit;
   background: #FFF;
 }
 
@@ -140,14 +128,14 @@ img {
 .left-arrow.top::after,
 .right-arrow.top::before,
 .right-arrow.top::after {
-  top: -.1em;
+  top: -.2em;
 }
 
 .left-arrow.bottom::before,
 .left-arrow.bottom::after,
 .right-arrow.bottom::before,
 .right-arrow.bottom::after {
-  bottom: -.1em;
+  bottom: -.2em;
 }
 
 .right-arrow.bottom {
@@ -157,6 +145,46 @@ img {
 .left-arrow.bottom {
   animation: rotation-to-the-right 10s linear infinite;
 }
+
+
+/*Left arrows' rounded borders*/
+.left-arrow:nth-child(1) {
+  border-bottom-left-radius: var(--borders-radius);
+}
+
+.left-arrow:nth-child(2) {
+  border-top-left-radius: var(--borders-radius);
+}
+
+.left-arrow.top::after,
+.left-arrow.top::before {
+  border-bottom-left-radius: var(--borders-radius);
+}
+
+.left-arrow.bottom::after,
+.left-arrow.bottom::before {
+  border-top-left-radius: var(--borders-radius);
+}
+
+/*Right arrows' rounded borders*/
+.right-arrow:nth-child(1) {
+  border-bottom-right-radius: var(--borders-radius);
+}
+
+.right-arrow:nth-child(2) {
+  border-top-right-radius: var(--borders-radius);
+}
+
+.right-arrow.top::after,
+.right-arrow.top::before {
+  border-bottom-right-radius: var(--borders-radius);
+}
+
+.right-arrow.bottom::after,
+.right-arrow.bottom::before {
+  border-top-right-radius: var(--borders-radius);
+}
+
 
 @keyframes rotation-to-the-right {
   0% { --gradient-angle: 0deg; }

@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class WidgetThreeComponent {
   grid = true;
+  voltageValue = "33.00W";
 
   switchGrid() {
     this.grid = !this.grid;
+    this.voltageValue = this.grid ? "33.00W" : "null";
   }
 }

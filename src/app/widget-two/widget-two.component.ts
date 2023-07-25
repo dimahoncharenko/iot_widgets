@@ -13,7 +13,21 @@ export class WidgetTwoComponent {
   isDragging = false;
   initialAngle = 0;
 
+  current_glow_color = "#7800b8";
+  glow_colors = [
+    "#7800b8",
+    "#7cd42d",
+    "#ddc61b",
+    "#4050e9",
+    "#fc0c43",
+    "#0cfcd8",
+  ];
+
   constructor(private _elementRef: ElementRef) {}
+
+  handleChangeGlowColor(c: string) {
+    this.current_glow_color = c;
+  }
 
   handleMouseDown(e: MouseEvent) {
       this.isDragging = true;
