@@ -1,11 +1,12 @@
 <div class="wrapper">
-  <div class="knob-container" style="--glow-color: {{current_glow_color}};" (mousedown)="handleMouseDown($event)">
+  <span class="power">{{ powerValue | number: "1.2-2" }}W</span>
+  <div class="knob-container" style="--glow-color: {{ current_glow_color }};" (mousedown)="handleMouseDown($event)">
     <div class="knob" [style.transform]="'rotate(' + angle + 'deg)'" (mousemove)="handleMousemove($event)">
     </div>
     <span class="temperature">{{ temperature }}</span>
   </div>
   <div class="color-palette">
-    <span *ngFor="let c of glow_colors;" (click)="handleChangeGlowColor(c)" style="background-color: {{ c }};"></span>
+    <span *ngFor="let c of glow_colors;" (click)="handleChangeGlowColor(c)" [style.backgroundColor]="c"></span>
   </div>
 </div>
 

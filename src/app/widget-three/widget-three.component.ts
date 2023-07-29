@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-widget-three',
@@ -7,10 +7,13 @@ import { Component } from '@angular/core';
 })
 export class WidgetThreeComponent {
   grid = true;
-  voltageValue = "33.00W";
+  @Input() voltageValue = 0.00;
+  @Input() productionValue = 0.00;
+  @Input() chargeValue = 0.00;
+  @Input() consumptionValue = 0.00;
+  maxCharge = 170;
 
   switchGrid() {
     this.grid = !this.grid;
-    this.voltageValue = this.grid ? "33.00W" : "null";
   }
 }

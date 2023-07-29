@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-widget-one-var-two',
-  templateUrl: './widget-one-var-two.component.html',
-  styleUrls: ['./widget-one-var-two.component.css']
+  selector: 'app-widget-one',
+  templateUrl: './widget-one.component.html',
+  styleUrls: ['./widget-one.component.css']
 })
-export class WidgetOne {
+export class WidgetOneComponent {
   clicked = false;
 
   current_color = "linear-gradient(180deg, hsl(294, 100%, 79%) 0%, rgb(70, 9, 156) 100%)";

@@ -1,17 +1,27 @@
-import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
+
+import { Subject } from "rxjs";
+import { debounceTime, switchMap, takeUntil } from "rxjs/operators";
+
+import { MockAPIService } from "../../services/mock-api.service";
 
 @Component({
   selector: 'app-widget-two',
   templateUrl: './widget-two.component.html',
   styleUrls: ['./widget-two.component.css']
 })
-export class WidgetTwoComponent {
+export class WidgetTwoComponent implements OnDestroy {
   angle = 0;
   temperature = 50;
+  @Input() powerValue = 0.00;
   prevX = 0;
   prevY = 0;
   isDragging = false;
   initialAngle = 0;
+
+
+  private clickSubject = new Subject<void>();
+  private unsubscribe = new Subject<void>();
 
   current_glow_color = "#7800b8";
   glow_colors = [
@@ -23,7 +33,25 @@ export class WidgetTwoComponent {
     "#0cfcd8",
   ];
 
-  constructor(private _elementRef: ElementRef) {}
+  constructor(private mock: MockAPIService, private _elementRef: ElementRef) {
+    this.setupClickHandler();
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
+  }
+
+  private setupClickHandler() {
+    this.clickSubject.pipe(
+      debounceTime(2000),
+      switchMap(() => this.mock.changeTemperature(this.temperature).pipe(takeUntil(this.unsubscribe)))
+    ).subscribe();
+  }
+
+  changeTemperature() {
+    this.clickSubject.next();
+  }
 
   handleChangeGlowColor(c: string) {
     this.current_glow_color = c;
@@ -76,5 +104,7 @@ export class WidgetTwoComponent {
     this.angle = deg;
     this.prevX = x;
     this.prevY = y;
+
+    this.changeTemperature();
   }
 }

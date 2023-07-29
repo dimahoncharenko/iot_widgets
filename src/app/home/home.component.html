@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" *ngIf="params">
     <div class="cols">
-      <app-widget-one-var-two></app-widget-one-var-two>
-      <app-widget-two></app-widget-two>
+      <app-widget-one></app-widget-one>
+      <app-widget-two [powerValue]="params.power"></app-widget-two>
     </div>
-    <app-widget-three></app-widget-three>
-    <app-widget-four></app-widget-four>
+    <app-widget-three [voltageValue]="params.power" [chargeValue]="params.charge" [consumptionValue]="params.consumption" [productionValue]="params.production"></app-widget-three>
+    <app-widget-four [newDataPoint]="params.temperature"></app-widget-four>
 </div>
 

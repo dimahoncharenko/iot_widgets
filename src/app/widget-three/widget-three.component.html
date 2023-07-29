@@ -3,13 +3,14 @@
       <div class="prop-container">
         <div class="icon "><img src="assets/solar-panel.png" alt="Production"/></div>
         <p>Production</p>
-        <p class="prop-value">1.58kW</p>
+        <p class="prop-value">{{ productionValue | number: '1.2-2' }}kW</p>
       </div>
       <div class="prop-container">
         <div *ngIf="grid" class="icon"><img src="assets/electric-tower.png" alt="Electric power"/></div>
         <div *ngIf="!grid" class="icon"><img src="assets/close.png" alt="Electric power"/></div>
         <p>Grid</p>
-        <p class="prop-value">{{ voltageValue }}</p>
+        <p *ngIf="grid" class="prop-value">{{ voltageValue | number: '1.2-2'}}W</p>
+        <p *ngIf="!grid" class="prop-value">null</p>
         <mat-slide-toggle [checked]="grid" (change)="switchGrid()"></mat-slide-toggle>
       </div>
     </div>
@@ -29,13 +30,13 @@
     <div class="widget-bottom">
       <div class="prop-container">
         <div class="icon"><img src="assets/battery-status.png" alt="Batteries"/></div>
-        <p>Battery 99%</p>
-        <p class="prop-value">166.00W</p>
+        <p>Battery {{ 100 * chargeValue / maxCharge | number: '1.2-2' }}%</p>
+        <p class="prop-value">{{ chargeValue | number: '1.2-2' }}W</p>
       </div>
       <div class="prop-container">
         <div class="icon"><img src="assets/electric-appliances.png" alt="Appliance's consumption" /></div>
         <p>Consumption</p>
-        <p class="prop-value">1.37kW</p>
+        <p class="prop-value">{{ consumptionValue | number: '1.2-2' }}kW</p>
       </div>
     </div>
    </div>

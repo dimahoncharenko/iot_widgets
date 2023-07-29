@@ -9,6 +9,6 @@
     </div>
   </div>
   <div class="color-palette">
-    <span *ngFor="let c of colors;" (click)="handleChangeColor(c)" style="background: {{ c }};"></span>
+    <span *ngFor="let c of colors;" (click)="handleChangeColor(c)" [style.background]="c"></span>
   </div>
 </div>

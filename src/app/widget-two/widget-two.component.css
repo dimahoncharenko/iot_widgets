@@ -8,6 +8,13 @@
   align-items: center;
 }
 
+.power {
+  font-weight: bold;
+  font-size: clamp(.6rem, 3vw + .4em, 1rem);
+  color: hsla(180, 10%, 80%, .7);
+  margin-bottom: -.5em;
+}
+
 .color-palette {
   display: flex;
   gap: .1em;

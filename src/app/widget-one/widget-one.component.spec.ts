@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WidgetOneVarTwoComponent } from './widget-one-var-two.component';
+import { WidgetOneComponent } from './widget-one.component';
 
 describe('WidgetOneVarTwoComponent', () => {
-  let component: WidgetOneVarTwoComponent;
-  let fixture: ComponentFixture<WidgetOneVarTwoComponent>;
+  let component: WidgetOneComponent;
+  let fixture: ComponentFixture<WidgetOneComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WidgetOneVarTwoComponent]
+      declarations: [WidgetOneComponent]
     });
-    fixture = TestBed.createComponent(WidgetOneVarTwoComponent);
+    fixture = TestBed.createComponent(WidgetOneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
