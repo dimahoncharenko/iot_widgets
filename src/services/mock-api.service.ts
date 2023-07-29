@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MockAPIService {
-  private baseUrl = "http://localhost:3000/api/v1/params"
+  private baseUrl = "https://iot-mock-api.onrender.com/api/v1/params"
 
   constructor(private http: HttpClient) { }
 
