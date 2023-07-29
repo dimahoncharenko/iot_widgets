@@ -11,8 +11,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   params: {
     temperature: number;
     power: number;
-    consumption: number;
     charge: number;
+    consumption: number;
     production: number;
   }
   private subscription: Subscription;

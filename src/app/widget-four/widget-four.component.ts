@@ -43,8 +43,8 @@ export class WidgetFourComponent implements OnInit {
             fill: true,
             backgroundColor: 'hsla(180deg, 50%, 50%, .2)',
             tension: 0.3,
-            borderJoinStyle: 'round',
             borderCapStyle: 'round',
+            borderJoinStyle: 'round'
           },
         ],
         labels: []

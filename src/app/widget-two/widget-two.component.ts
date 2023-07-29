@@ -14,8 +14,8 @@ export class WidgetTwoComponent implements OnDestroy {
   angle = 0;
   temperature = 50;
   @Input() powerValue = 0.00;
-  prevX = 0;
   prevY = 0;
+  prevX = 0;
   isDragging = false;
   initialAngle = 0;
 
