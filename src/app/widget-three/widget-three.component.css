@@ -138,13 +138,15 @@ img {
   bottom: -.2em;
 }
 
-.right-arrow.bottom {
+/* If it needs to invert the animation of bottom arrows */
+
+/* .right-arrow.bottom {
   animation: rotation-to-the-left 10s linear infinite;
 }
 
 .left-arrow.bottom {
-  animation: rotation-to-the-right 10s linear infinite;
-}
+  animation: rotation-to-the-left 10s linear infinite;
+} */
 
 
 /*Left arrows' rounded borders*/
