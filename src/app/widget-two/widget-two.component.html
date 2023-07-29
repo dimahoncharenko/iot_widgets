@@ -1,5 +1,8 @@
 <div class="wrapper">
-  <span class="power">{{ powerValue | number: "1.2-2" }}W</span>
+  <div>
+    <span class="power">{{ powerValue | number: "1.2-2" }}W</span>
+    <span class="current-temperature">{{ currentTemperature | number: "1.2-2" }}°C</span>
+  </div>
   <div class="knob-container" style="--glow-color: {{ current_glow_color }};" (mousedown)="handleMouseDown($event)">
     <div class="knob" [style.transform]="'rotate(' + angle + 'deg)'" (mousemove)="handleMousemove($event)">
     </div>

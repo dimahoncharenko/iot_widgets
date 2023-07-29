@@ -8,11 +8,17 @@
   gap: 3em;
 }
 
-.power {
+.power,
+.current-temperature {
   font-weight: bold;
   font-size: clamp(.6rem, 3vw + .4em, 1rem);
-  color: hsla(180, 10%, 80%, .7);
+  color: hsla(180, 28%, 55%, 0.7);
   margin-bottom: -.5em;
+}
+
+.current-temperature {
+  margin-left: 1em;
+  color: hsla(40, 30%, 58%, 0.684); 
 }
 
 .color-palette {

@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { Subject } from "rxjs";
 import { debounceTime, switchMap, takeUntil } from "rxjs/operators";
@@ -10,10 +10,11 @@ import { MockAPIService } from "../../services/mock-api.service";
   templateUrl: './widget-two.component.html',
   styleUrls: ['./widget-two.component.css']
 })
-export class WidgetTwoComponent implements OnDestroy {
+export class WidgetTwoComponent implements OnInit, OnDestroy {
   angle = 0;
-  temperature = 50;
+  temperature = 18;
   @Input() powerValue = 0.00;
+  @Input() currentTemperature = this.temperature;
   prevY = 0;
   prevX = 0;
   isDragging = false;
@@ -35,6 +36,10 @@ export class WidgetTwoComponent implements OnDestroy {
 
   constructor(private mock: MockAPIService, private _elementRef: ElementRef) {
     this.setupClickHandler();
+  }
+
+  ngOnInit() {
+    this.changeTemperature();
   }
 
   ngOnDestroy() {
