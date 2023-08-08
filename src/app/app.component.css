@@ -1,0 +1,18 @@
+.grid-wrapper {
+  display: grid;
+  grid:
+        "navbar body" min-content
+        "navbar body" 1fr/min-content 1fr;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
+  gap: .5em;
+}
+
+.content {
+  width: 100%;
+  grid-area: body;
+  max-width: 1200px;
+  padding: .5em;
+  justify-self: center;
+
+}

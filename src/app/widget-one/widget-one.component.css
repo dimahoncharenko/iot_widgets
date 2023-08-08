@@ -3,25 +3,14 @@
   flex-direction: column;
   gap: 1em;
   align-items: center;
-}
-
-.color-palette {
-  display: flex;
-  gap: .1em;
-  min-width: 150px;
-}
-
-.color-palette > span {
-  flex: 1;
-  padding: .5em;
-  cursor: pointer;
-  box-shadow: 0 0 .1em slategray;
-  border-radius: .1em;
+  padding: 2em 0;
+  background-color: hsl(236,30%,22%);
+  border-radius: .5em;
 }
 
 .range {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   position: relative;
   color: hsl(0, 0%, 60%);
 }

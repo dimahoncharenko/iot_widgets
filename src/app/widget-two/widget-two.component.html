@@ -3,12 +3,14 @@
     <span class="power">{{ powerValue | number: "1.2-2" }}W</span>
     <span class="current-temperature">{{ currentTemperature | number: "1.2-2" }}°C</span>
   </div>
-  <div class="knob-container" style="--glow-color: {{ current_glow_color }};" (mousedown)="handleMouseDown($event)">
-    <div class="knob" [style.transform]="'rotate(' + angle + 'deg)'" (mousemove)="handleMousemove($event)">
-    </div>
+  <div class="knob-container" style="--glow-color: {{ 'var(--color-' + current_gradient + ');' }}" (mousedown)="handleMouseDown($event)">
+    <div class="knob" [style.transform]="'rotate(' + angle + 'deg)'" (mousemove)="handleMousemove($event)"></div>
+
+      <svg class="progress-circle" #progress [style]="'--percentage:' + temperature">
+        <circle class="background-circle" cx="50%" cy="50%" r="40%" />
+        <circle class="fill-circle" cx="50%" cy="50%" r="40%" />
+      </svg>
+
     <span class="temperature">{{ temperature }}</span>
-  </div>
-  <div class="color-palette">
-    <span *ngFor="let c of glow_colors;" (click)="handleChangeGlowColor(c)" [style.backgroundColor]="c"></span>
   </div>
 </div>

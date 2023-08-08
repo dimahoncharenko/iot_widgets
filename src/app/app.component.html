@@ -1,1 +1,6 @@
-<app-home></app-home>
+<div class="grid-wrapper">
+  <app-sidebar [style.backgroundColor]="'var(--color-' + paletteMode + ')'" style="grid-area: navbar"></app-sidebar>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

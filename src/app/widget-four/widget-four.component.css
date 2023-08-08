@@ -1,7 +1,23 @@
 .chart-wrapper {
     box-shadow: 0 0 .1em slategray;
     border-radius: .5em;
-    width: 100%;
+    max-width: calc(80vw + 2em);
+    background-color: hsl(236,30%,22%);
+}
+
+#chart {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .chart-wrapper {
     aspect-ratio: 2/1;
-    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  .chart-wrapper {
+    max-width: 100%;
+  }
 }

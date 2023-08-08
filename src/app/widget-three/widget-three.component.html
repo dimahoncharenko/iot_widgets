@@ -11,10 +11,9 @@
         <p>Grid</p>
         <p *ngIf="grid" class="prop-value">{{ voltageValue | number: '1.2-2'}}W</p>
         <p *ngIf="!grid" class="prop-value">null</p>
-        <mat-slide-toggle [checked]="grid" (change)="switchGrid()"></mat-slide-toggle>
       </div>
     </div>
-    
+
     <div class="widget-middle">
       <div class="prop-container horizontal">
         <div class="left-arrows">

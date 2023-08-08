@@ -1,4 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Tektur&family=Ysabeau+SC:wght@300;400;500&display=swap');
+
+:root {
+  --color-1: #7800b8;
+  --color-2: #7cd42d;
+  --color-3: #ddc61b;
+  --color-4: #4050e9;
+  --color-5: #0cfcd8;
+  --color-6: #fc0c43;
+
+  --gradient-1: linear-gradient(180deg, hsl(294, 100%, 79%) 0%, rgb(70, 9, 156) 100%);
+  --gradient-2:linear-gradient(180deg, rgba(124,212,45,1) 0%, rgba(9,156,92,1) 100%);
+  --gradient-3: linear-gradient(180deg, rgba(255,227,19,1) 0%, rgba(203,90,6,1) 100%);
+  --gradient-4: linear-gradient(180deg, rgba(78,129,255,1) 0%, rgba(23,0,89,1) 100%);
+  --gradient-5: linear-gradient(180deg, rgba(12,252,216,1) 0%, rgba(144,0,255,1) 100%);
+  --gradient-6: linear-gradient(180deg, rgba(252,12,67,1) 0%, rgba(47,0,130,1) 100%);
+}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: 'Tektur', cursive;
+  background-color: hsl(234,37%,17%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ysabeau SC', sans-serif;
+}

@@ -1,0 +1,21 @@
+<div class="sidebar" [style.width]="hidden ? '2em' : '20vw'">
+  <div class="logo">
+    <img src="favicon.ico" alt="logo" />
+    <span *ngIf="!hidden">[Company_Name]</span>
+  </div>
+  <div class="sidebar-content">
+    <ul class="menu">
+      <li routerLink="/">
+          <mat-icon>dashboard</mat-icon>
+          <a *ngIf="!hidden" class="menu-link">Dashboard</a>
+      </li>
+      <li routerLink="/palette-mode">
+        <mat-icon>color_lens</mat-icon>
+        <a *ngIf="!hidden" class="menu-link">Mode</a>
+      </li>
+      <li class="hide" [style.alignSelf]="hidden ? 'flex-start' : 'flex-end'" (click)="switchBar()">
+        <mat-icon>{{ hidden ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -9,6 +9,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
+import { AppRoutingModule } from "./app-routing.module";
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +18,9 @@ import { WidgetTwoComponent } from './widget-two/widget-two.component';
 import { WidgetThreeComponent } from './widget-three/widget-three.component';
 import { WidgetOneComponent } from './widget-one/widget-one.component';
 import { WidgetFourComponent } from './widget-four/widget-four.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { PaletteModeComponent } from './palette-mode/palette-mode.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +30,12 @@ import { WidgetFourComponent } from './widget-four/widget-four.component';
     WidgetTwoComponent,
     WidgetThreeComponent,
     WidgetFourComponent,
+    SidebarComponent,
+    PaletteModeComponent,
+    HeaderComponent,
   ],
   imports: [
+    AppRoutingModule,
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -36,7 +45,7 @@ import { WidgetFourComponent } from './widget-four/widget-four.component';
     MatSliderModule,
     MatInputModule,
     MatIconModule,
-    NgChartsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

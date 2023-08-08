@@ -16,6 +16,9 @@ img {
   margin: 1em auto;
   box-shadow: 0 0 .1em slategray;
   border-radius: .5em;
+  user-select: none;
+  background-color: hsl(236,30%,22%);
+  color: white;
 }
 
 .widget-top,
@@ -115,7 +118,7 @@ img {
   position: absolute;
   inset: .1rem;
   left: -.1em;
-  background: #FFF;
+  background-color: hsl(236,30%,22%);
 }
 
 .left-arrow::before,

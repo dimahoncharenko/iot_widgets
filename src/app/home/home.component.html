@@ -1,8 +1,21 @@
-<div class="container" *ngIf="params">
-    <div class="cols">
-      <app-widget-one></app-widget-one>
-      <app-widget-two [powerValue]="params.power" [currentTemperature]="params.temperature"></app-widget-two>
-    </div>
-    <app-widget-three [voltageValue]="params.power" [chargeValue]="params.charge" [consumptionValue]="params.consumption" [productionValue]="params.production"></app-widget-three>
-    <app-widget-four [newDataPoint]="params.temperature"></app-widget-four>
-</div>
+ <div class="content" *ngIf="params">
+        <app-header></app-header>
+
+        <div [ngSwitch]="currentPage">
+          <div *ngSwitchCase="1">
+            <app-widget-two [@fadeIn] [powerValue]="params.power" [currentTemperature]="params.temperature"></app-widget-two>
+            <app-widget-four [@fadeIn] [newDataPoint]="params.temperature"></app-widget-four>
+          </div>
+
+          <div *ngSwitchCase="2">
+            <app-widget-one [@fadeIn] [@fadeOut]></app-widget-one>
+            <app-widget-three [@fadeIn] [@fadeOut] [voltageValue]="params.power" [chargeValue]="params.charge" [consumptionValue]="params.consumption" [productionValue]="params.production"></app-widget-three>
+          </div>
+        </div>
+        <div class="page-buttons">
+          <button class="prev-button" (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
+          <button class="next-button" (click)="nextPage()" [disabled]="currentPage === pages">Next</button>
+        </div>
+ </div>
+
+

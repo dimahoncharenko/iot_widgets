@@ -1,0 +1,25 @@
+.options {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.option {
+  padding: 1em;
+  background-color: hsla(0deg, 0%, 100%, .1);
+  border-radius: .5em;
+}
+
+.color-palette {
+  display: flex;
+  gap: .3em;
+  padding: .3em;
+}
+
+.color-sample {
+  padding: .5em 1em;
+  cursor: pointer;
+  border-radius: .2em;
+  border: .15em dashed transparent;
+}

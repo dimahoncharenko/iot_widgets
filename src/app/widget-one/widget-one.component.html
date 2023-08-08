@@ -1,14 +1,11 @@
 <div class="wrapper">
   <div [ngClass]="!clicked ? 'range' : 'range clicked'" (click)="handleClick()">
-    <div class="range-outer" style="--gradient-schema: {{ current_color }}">
+    <div class="range-outer" style="--gradient-schema: {{ 'var(--gradient-' + gradientMode + ');' }}">
       <div class="range-middle">
         <div class="range-inner">
           <mat-icon>power_settings_new</mat-icon>
         </div>
       </div>
     </div>
-  </div>
-  <div class="color-palette">
-    <span *ngFor="let c of colors;" (click)="handleChangeColor(c)" [style.background]="c"></span>
   </div>
 </div>

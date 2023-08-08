@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div class="options">
+  <div class="option">
+    <p>Widget colors</p>
+    <div class="color-palette">
+      <span *ngFor="let m of modes;" [style.borderColor]="current === m ? 'white' : 'transparent'" class="color-sample" [style.backgroundColor]="'var(--color-' + m + ')'" (click)="handleClick(m);"></span>
+    </div>
+  </div>
+</div>
