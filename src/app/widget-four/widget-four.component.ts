@@ -50,16 +50,22 @@ export class WidgetFourComponent implements AfterViewInit {
               borderColor: "hsla(0deg, 0%, 10%, .2)"
             },
           ],
-          labels: []
+          labels: [],
         },
         options: {
+          color: "white",
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
             tooltip: {
               enabled: true,
               intersect: false,
-            }
+              bodyColor: () => {
+                return this.newDataPoint > 60 ? "red" : "white";
+              },
+              backgroundColor: "hsl(230deg, 40%, 13%)",
+              titleColor: "yellow",
+            },
           },
           elements: {
             point: {

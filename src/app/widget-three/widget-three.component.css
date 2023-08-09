@@ -46,6 +46,9 @@ img {
 
 .icon {
   max-width: 4em;
+  background-color: hsla(270deg, 20%, 10%, .2);
+  padding: .5em;
+  border-radius: .5em;
 }
 
 .prop-container {
@@ -69,7 +72,10 @@ img {
 }
 
 .hub {
-  max-width: 15em;
+  max-width: 10em;
+  background-color: hsla(270deg, 20%, 10%, .2);
+  padding: .2em;
+  border-radius: .5em;
 }
 
 .left-arrows,
@@ -87,10 +93,10 @@ img {
     from var(--gradient-angle),
     var(--color-5) 0deg 40deg,
     var(--color-3) 40deg 100deg,
-    var(--color-5) 100deg 140deg,
-    var(--color-3) 140deg 220deg,
-    var(--color-5) 220deg 260deg,
-    var(--color-3) 260deg 320deg
+    var(--color-4) 100deg 140deg,
+    var(--color-5) 140deg 220deg,
+    var(--color-3) 220deg 260deg,
+    var(--color-4) 260deg 320deg
   );
   animation: rotation-to-the-left 10s linear infinite;
 }
@@ -190,6 +196,12 @@ img {
   border-top-right-radius: var(--borders-radius);
 }
 
+@media screen and (min-width: 1000px) {
+  
+  .hub {
+    max-width: 15em;
+  }
+}
 
 @keyframes rotation-to-the-right {
   0% { --gradient-angle: 0deg; }
